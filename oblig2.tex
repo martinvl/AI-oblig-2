@@ -45,4 +45,71 @@
 \begin{document}
 \maketitle
 
+\section*{Task 1}
+
+\subsection*{Domain:}
+
+\subsubsection*{Constants:}
+
+The domain does not have any known constants.
+
+\subsubsection*{Functions:}
+
+The domain does not have any knows constants.
+
+\subsubsection*{Relations:}
+
+The domain has the following relations:
+
+\begin{itemize}
+
+	\item
+	Man(X) - (X) exists if X is a man
+	\item
+	Woman(X) - (X) exists if X is a woman
+	\item
+	Vegetarian(X) - (X) exists if X is a vegetarian
+	\item
+	Smart(X) - (X) exists if X is smart
+	\item
+	Politician(X) - (X) exists if X is a politician
+	\item
+	Barber(X) - (X) exists if X is a barber
+	\item
+	Hate(X, Y) - (X, Y) exists if X hate Y
+	\item
+	Like(X, Y) - (X, Y) exists if X like Y
+	\item
+	Shaves(X, Y) - (X, Y) exists if X shaves Y
+
+\end{itemize}
+
+All relations has a fixed arity, but we use the paranthesis to define arguments as it is easier to read.
+
+
+
+
+
+
+\subsection*{a.}
+
+$\forall X (\forall Y ((Vegetarian(Y) \wedge  Hates(X, Y)) \rightarrow Smart(X))$
+
+\subsection*{b.}
+
+$\forall X (Smart(X) \wedge Vegetarian(X) \rightarrow (\forall Y (\neg Like(Y, X)))$
+
+\subsection*{c.}
+
+$\exists X (Woman(X) \wedge \forall Y ((Man(Y) \wedge vegetarian(Y)) \rightarrow like(X, Y))$
+
+\subsection*{d.}
+
+$\exists X(barber(X) \wenge \forall Y (Man(Y) \wedge \neg Shaves(Y, Y) \rightarrow Shaves(X, Y)))$
+
+\subsection*{e.}
+
+$$
+
+
 \end{document}
