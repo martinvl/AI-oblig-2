@@ -1,6 +1,5 @@
-\documentclass[11pt,norsk,a4paper]{article}
-
-\usepackage[latin1]{inputenc}
+\documentclass[a4paper, english, 11pt]{article}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{babel,graphicx,mathpple,textcomp,varioref}
 \usepackage{amssymb, amsmath}
@@ -10,6 +9,23 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{subfig}
+\usepackage{listings}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\lstset{
+  language=C,
+  basicstyle=\footnotesize,
+  keywordstyle=\color[rgb]{0,0,1},
+  commentstyle=\color[rgb]{0.133,0.545,0.133},
+  stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
 
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
@@ -39,6 +55,7 @@
     stringstyle=\color[rgb]{0.627,0.126,0.941},
 }
 
+
 \title{INF5390 oblig 2}
 \author{mathiajj and martinvl}
 
@@ -55,7 +72,9 @@ The domain does not have any known constants.
 
 \subsubsection*{Functions:}
 
-The domain does not have any knows constants.
+The domain has the following functions:
+
+CanFool(X, Y) - (X, Y) exists if X can fool Y
 
 \subsubsection*{Relations:}
 
@@ -93,7 +112,7 @@ All relations has a fixed arity, but we use the paranthesis to define arguments 
 
 \subsection*{a.}
 
-$\forall X (\forall Y ((Vegetarian(Y) \wedge  Hates(X, Y)) \rightarrow Smart(X))$
+$\forall X \forall Y ((Vegetarian(Y) \wedge  Hates(X, Y)) \rightarrow Smart(X)$
 
 \subsection*{b.}
 
@@ -105,11 +124,11 @@ $\exists X (Woman(X) \wedge \forall Y ((Man(Y) \wedge vegetarian(Y)) \rightarrow
 
 \subsection*{d.}
 
-$\exists X(barber(X) \wenge \forall Y (Man(Y) \wedge \neg Shaves(Y, Y) \rightarrow Shaves(X, Y)))$
+$\exists X(barber(X) \wedge \forall Y (Man(Y) \wedge \neg Shaves(Y, Y) \rightarrow Shaves(X, Y)))$
 
 \subsection*{e.}
 
-$$
+$\forall X(Politican(X) \rightarrow \exists Y \forall T (CanFool(X, Y)) \vee \forall Z \exists T (Time(T) \wedge CanFool(X, Y)))$
 
 
 \end{document}
