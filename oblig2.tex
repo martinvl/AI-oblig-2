@@ -74,7 +74,7 @@ The domain does not have any known constants.
 
 The domain has the following functions:
 
-CanFool(X, Y) - (X, Y) exists if X can fool Y
+CanFool(X, Y) - Returns the times when X can fool Y
 
 \subsubsection*{Relations:}
 
@@ -105,11 +105,6 @@ The domain has the following relations:
 
 All relations has a fixed arity, but we use the paranthesis to define arguments as it is easier to read.
 
-
-
-
-
-
 \subsection*{a.}
 
 $\forall X \forall Y ((Vegetarian(Y) \wedge  Hates(X, Y)) \rightarrow Smart(X)$
@@ -128,7 +123,7 @@ $\exists X(barber(X) \wedge \forall Y (Man(Y) \wedge \neg Shaves(Y, Y) \rightarr
 
 \subsection*{e.}
 
-$\forall X(Politican(X) \rightarrow \exists Y \forall T (CanFool(X, Y)) \vee \forall Z \exists T (Time(T) \wedge CanFool(X, Y)))$
+$\forall X(Politican(X) \rightarrow (\exists Y \forall T (T \in CanFool(X, Y)) \vee \forall Y \exists T (T \in CanFool(X, Y)) \wedge \exists Y \exists T (T \not\in CanFool(X, Y))))$
 
 
 \end{document}
