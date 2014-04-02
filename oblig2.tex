@@ -108,31 +108,73 @@ The domain has the following relations:
 
 \end{itemize}
 
-All relations and functions has a fixed arity, but we use the paranthesis to define arguments as it is easier to read.
+All relations and functions has a fixed arity, but we use the paranthesis to
+define arguments as it is easier to read.
 
 \subsection*{a.}
 
-$\forall X \forall Y ((Vegetarian(Y) \wedge  Hates(X, Y)) \Rightarrow Smart(X))$
+$\forall X \forall Y ((Vegetarian(Y) \wedge  Hates(X, Y)) \Rightarrow
+Smart(X))$
 
 \subsection*{b.}
 
-$\forall X \forall Y (Smart(X) \wedge Vegetarian(X) \Rightarrow (\neg Like(Y, X))$
+$\forall X \forall Y (Smart(X) \wedge Vegetarian(X) \Rightarrow (\neg
+Like(Y, X))$
 
 \subsection*{c.}
 
-$\exists X \forall Y ((Woman(X) \wedge (Man(Y) \wedge Vegetarian(Y)) \Rightarrow Like(X, Y))$
+$\exists X \forall Y ((Woman(X) \wedge (Man(Y) \wedge Vegetarian(Y))
+\Rightarrow Like(X, Y))$
 
 \subsection*{d.}
 
-$\exists X \forall Y ((Barber(X) \wedge Man(Y) \wedge \neg Shaves(Y, Y)) \Rightarrow Shaves(X, Y))$
+$\exists X \forall Y ((Barber(X) \wedge Man(Y) \wedge \neg Shaves(Y, Y))
+\Rightarrow Shaves(X, Y))$
 
 \subsection*{e.}
 
-$\forall X(Politican(X) \Rightarrow ((\exists Y \forall T (T \in canfool(X, Y)) \vee \forall Y \exists T (T \in canfool(X, Y))) \wedge \exists Y \exists T (T \not\in canfool(X, Y))))$
+$\forall X(Politican(X) \Rightarrow ((\exists Y \forall T
+(T \in canfool(X, Y)) \vee \forall Y \exists T (T \in canfool(X, Y))) \wedge
+\exists Y \exists T (T \not\in canfool(X, Y))))$
 
 \section*{Task 2}
 
-$\forall X \forall Y \exists T ((Sock(X) \wedge Sock(Y) \wedge Pair(X, Y)) \Rightarrow (Before(Now, T) \wedge (Lost(X, T) \vee Lost(Y, T)))$
+$\forall X \forall Y \exists T ((Sock(X) \wedge Sock(Y) \wedge Pair(X, Y))
+\Rightarrow (Before(Now, T) \wedge (Lost(X, T) \vee Lost(Y, T)))$
 
+\section*{Task 3}
+\subsection*{a.}
+State space is simply the space of all possible states. When talking about plan
+space we typically mean the space of all possible sequences of actions that
+may or may not lead from a given initial state to a given goal state.
+
+\subsection*{b.}
+Progressive planning uses the initial state as a starting point and then tries
+to reach the goal state by applying possible actions (i.e. actions for which
+the preconditions satisfied). Regressive planning starts with the goal state,
+backtracking the actions that can lead to the current state in an attempt to
+find the initial state.
+
+\subsection*{c.}
+Commitment is relevant in partial order planning. Least commitment means that
+you leave as much of the plan ordering undefined as possible (while leaving the
+plan valid). More commitment means to order more of the actions than what is
+necessary, where the extreme is a totally ordered plan.
+
+\subsection*{d.}
+A totally ordered plan is essentially a clearly defined sequence of actions.
+In a partially ordered plan the actions are ordered with relative links ("A
+must happen before B"). This means that parts of a partially ordered plan can
+be executed in any order (as long as the constraints in the plan are
+satisfied). It also means that several totally ordered plans might satisfy a
+single partially ordered plan.
+
+\subsection*{Schema instances}
+\begin{align*}
+    &\mathrm{Fly}(P_1, \mathrm{JFK}, \mathrm{SFO})\\
+    &\mathrm{Fly}(P_2, \mathrm{SFO}, \mathrm{JFK})\\
+    &\mathrm{Fly}(P_1, \mathrm{JFK}, \mathrm{JFK})\\
+    &\mathrm{Fly}(P_2, \mathrm{SFO}, \mathrm{SFO})
+\end{align*}
 
 \end{document}
