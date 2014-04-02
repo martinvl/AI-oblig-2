@@ -74,7 +74,12 @@ The domain does not have any known constants.
 
 The domain has the following functions:
 
-CanFool(X, Y) - Returns the times when X can fool Y
+\begin{itemize}
+
+	\item
+	canfool(X, Y) - Returns the set of times when X can fool Y
+
+\end{itemize}
 
 \subsubsection*{Relations:}
 
@@ -103,27 +108,31 @@ The domain has the following relations:
 
 \end{itemize}
 
-All relations has a fixed arity, but we use the paranthesis to define arguments as it is easier to read.
+All relations and functions has a fixed arity, but we use the paranthesis to define arguments as it is easier to read.
 
 \subsection*{a.}
 
-$\forall X \forall Y ((Vegetarian(Y) \wedge  Hates(X, Y)) \rightarrow Smart(X)$
+$\forall X \forall Y ((Vegetarian(Y) \wedge  Hates(X, Y)) \Rightarrow Smart(X))$
 
 \subsection*{b.}
 
-$\forall X (Smart(X) \wedge Vegetarian(X) \rightarrow (\forall Y (\neg Like(Y, X)))$
+$\forall X \forall Y (Smart(X) \wedge Vegetarian(X) \Rightarrow (\neg Like(Y, X))$
 
 \subsection*{c.}
 
-$\exists X (Woman(X) \wedge \forall Y ((Man(Y) \wedge vegetarian(Y)) \rightarrow like(X, Y))$
+$\exists X \forall Y ((Woman(X) \wedge (Man(Y) \wedge Vegetarian(Y)) \Rightarrow Like(X, Y))$
 
 \subsection*{d.}
 
-$\exists X(barber(X) \wedge \forall Y (Man(Y) \wedge \neg Shaves(Y, Y) \rightarrow Shaves(X, Y)))$
+$\exists X \forall Y ((Barber(X) \wedge Man(Y) \wedge \neg Shaves(Y, Y)) \Rightarrow Shaves(X, Y))$
 
 \subsection*{e.}
 
-$\forall X(Politican(X) \rightarrow (\exists Y \forall T (T \in CanFool(X, Y)) \vee \forall Y \exists T (T \in CanFool(X, Y)) \wedge \exists Y \exists T (T \not\in CanFool(X, Y))))$
+$\forall X(Politican(X) \Rightarrow ((\exists Y \forall T (T \in canfool(X, Y)) \vee \forall Y \exists T (T \in canfool(X, Y))) \wedge \exists Y \exists T (T \not\in canfool(X, Y))))$
+
+\section*{Task 2}
+
+$\forall X \forall Y \exists T ((Sock(X) \wedge Sock(Y) \wedge Pair(X, Y)) \Rightarrow (Before(Now, T) \wedge (Lost(X, T) \vee Lost(Y, T)))$
 
 
 \end{document}
