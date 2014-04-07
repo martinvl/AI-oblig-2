@@ -119,7 +119,7 @@ Like(Y, X))$
 
 \subsection*{c.}
 
-$\exists X \forall Y ((Woman(X) \wedge (Man(Y) \wedge Vegetarian(Y))
+$\exists X \forall Y ((Woman(X) \wedge (Man(Y) \wedge \neg Vegetarian(Y))
 \Rightarrow Like(X, Y))$
 
 \subsection*{d.}
@@ -129,8 +129,8 @@ $\exists X \forall Y ((Barber(X) \wedge Man(Y) \wedge \neg Shaves(Y, Y))
 
 \subsection*{e.}
 
-$\forall X(Politican(X) \Rightarrow ((\exists Y \forall T
-(T \in canfool(X, Y)) \vee \forall Y \exists T (T \in canfool(X, Y))) \wedge
+$\forall X(Politican(X) \Rightarrow (\exists Y \forall T
+(T \in canfool(X, Y)) \wedge \forall Y \exists T (T \in canfool(X, Y)) \wedge
 \exists Y \exists T (T \not\in canfool(X, Y))))$
 
 \section*{Task 2}
